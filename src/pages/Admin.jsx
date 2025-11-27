@@ -34,7 +34,7 @@ export default function Admin() {
 
   const fetchRecipes = () => {
     axios
-      .get("http://localhost:30083/recipe")
+      .get("http://localhost:30083/back1/recipe")
       .then((res) => {
         setRecipes(res.data);
         setFilteredRecipes(res.data);
@@ -48,8 +48,8 @@ export default function Admin() {
 
   const handleSubmit = () => {
     const request = isUpdating
-      ? axios.put("http://localhost:30083/update", formData)
-      : axios.post("http://localhost:30083/insert", formData);
+      ? axios.put("http://localhost:30083/back1/update", formData)
+      : axios.post("http://localhost:30083/back1/insert", formData);
 
     request
       .then((res) => {
